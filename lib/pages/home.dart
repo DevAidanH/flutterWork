@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pratice/pages/about.dart';
+import 'package:pratice/pages/infoPage.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello World"),
+        title: const Text("Hello World"),
         centerTitle: true,
         backgroundColor: Colors.red,
         titleTextStyle: const TextStyle(
@@ -24,9 +25,12 @@ class Home extends StatelessWidget {
             const   Text("Welcome"),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const aboutPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>  const aboutPage()));
               }, 
-              child: const Text("About Page"))
+              child: const Text("About Page")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage()));
+            }, child: const Text("Info Page"))
           ],
         ),
       ),
