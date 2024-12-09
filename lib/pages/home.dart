@@ -22,15 +22,21 @@ class Home extends StatelessWidget {
         alignment: Alignment.center,
         child: Column(
           children: [
-            const   Text("Welcome"),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>  const aboutPage()));
-              }, 
-              child: const Text("About Page")),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage()));
-            }, child: const Text("Info Page"))
+            const Text("Home Page"),
+            Row(
+              children: [
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+                }, child: const Text("Home Page")),
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const aboutPage()));
+                }, child: const Text("About Page")),
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage()));
+                }, child: const Text("Info Page"))
+              ],
+            ),
+            const Text("Home page")
           ],
         ),
       ),
